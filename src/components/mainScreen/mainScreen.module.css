@@ -1,0 +1,82 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  padding: 0;
+}
+
+.formSection {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.formSection::-webkit-scrollbar {
+  width: 6px;
+}
+
+.formSection::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.formSection::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.formSection::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.divider {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1), transparent);
+  margin: 20px 0;
+}
+
+.previewSection {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.previewSection::-webkit-scrollbar {
+  width: 6px;
+}
+
+.previewSection::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.previewSection::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.previewSection::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+
+  .formSection,
+  .previewSection {
+    padding: 20px;
+  }
+}
