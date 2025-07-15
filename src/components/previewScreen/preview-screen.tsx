@@ -8,7 +8,7 @@ export default function PreviewScreen() {
     <div className={styles.container}>
       <h2 className={styles.title}>Previzualizador</h2>
 
-      <div className={styles.document}>
+      <div className={styles.document} id="contract-preview">
         <div className={styles.header}>
           <div className={styles.headerLeft}>
             <div className={styles.headerItem}>
@@ -50,33 +50,11 @@ export default function PreviewScreen() {
 
         <div className={styles.content}>
           <p className={styles.contractText}>
-            La empresa/persona
-            <span className={styles.placeholder}>
-              {
-                contract.companyName ? contract.companyName : "[NOMBRE DE LA EMPRESA]"
-              }
-            </span>
-          </p>
-
-          <p className={styles.contractText}>
-            debe a <span className={styles.placeholder}>
-                {
-                  contract.contractorName ? contract.contractorName : "[NOMBRE DEL CONTRATISTA]"
-                }
-              </span> un total de{" "}
-            <span className={styles.placeholder}>{ contract.amount ? contract.amount : "[MONTO]"}</span>
-          </p>
-
-          <p className={styles.contractText}>
-            por concepto de <span className={styles.placeholder}>
-                {
-                  contract.jobDescription ? contract.jobDescription : "[DESCRIPCION DEL TRABAJO]"
-                }
-              </span>, correspondiente a la
-          </p>
-
-          <p className={styles.contractText}>
-            <span className={styles.placeholder}>{ contract.estimatedTime ? contract.estimatedTime : "[TIEMPO ESTIMADO]"}</span>.
+            La empresa/persona <span className={styles.placeholder}>{contract.companyName || "[NOMBRE EMPRESA]"}</span>
+            debe a <span className={styles.placeholder}>{contract.contractorName || "[NOMBRE CONTRATISTA]"}</span>
+            un total de <span className={styles.placeholder}>{contract.amount || "[MONTO]"}</span>
+            por concepto de <span className={styles.placeholder}>{contract.jobDescription || "[DESCRIPCIÓN]"}</span>,
+            por un tiempo de <span className={styles.placeholder}>{contract.estimatedTime || "[TIEMPO]"}</span>.
           </p>
         </div>
 
